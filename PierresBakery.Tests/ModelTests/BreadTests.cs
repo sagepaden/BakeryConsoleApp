@@ -25,5 +25,8 @@ namespace PierresBakery.Tests
     {
       Assert.AreEqual(10, Bread.GetBreadPrice(3));
     }
+
+
+
   }
 }
