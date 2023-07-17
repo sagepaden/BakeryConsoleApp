@@ -12,8 +12,8 @@ namespace PierresBakery
       try 
       {
         Console.ForegroundColor = ConsoleColor.Green;
-            Console.Title = "ASCII Art";
-            string title = @"
+        Console.Title = "ASCII Art";
+        string title = @"
         @@@@@@@   @@@  @@@@@@@@  @@@@@@@   @@@@@@@   @@@@@@@@   @@@@@@   
         @@@@@@@@  @@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@   
         @@!  @@@  @@!  @@!       @@!  @@@  @@!  @@@  @@!       !@@       
@@ -36,25 +36,50 @@ namespace PierresBakery
           :!:  !:!  :!:  !:!  :!:  !:!  :!:       :!:  !:!    :!:    
           ::::::::  ::   :::  :::  :::  ::: ::::  ::   :::    :::    
           :: : ::   ::   :::  ::   :::  : :: ::   ::   :::    :::     ";
+        
+        string consoleBread = @"
+           ______                    _     _____   _                
+           | ___ \                  | |_  |  ___| | |               
+           | |_/ /_ __ ___  __ _  __| (_) |___ \  | |__  _   ___  __
+           | ___ \ '__/ _ \/ _` |/ _` |       \ \ | '_ \| | | \ \/ /
+           | |_/ / | |  __/ (_| | (_| |_  /\__/ / | |_) | |_| |>  < 
+           \____/|_|  \___|\__,_|\__,_(_) \____/  |_.__/ \__,_/_/\_\
+                                (Buy 2 Get 1 Free)                       
+        ";
 
-            Console.WriteLine(title);
-            Console.Read();
-        Console.WriteLine("Bread is $5 per loaf, or buy 2 get 1 free!");
-        Console.WriteLine("~* Every 3rd loaf is free *~");
-        Console.WriteLine("Pastries are $2 each, or buy 3 get 1 free!");
-        Console.WriteLine("~* Every 4th pastry is free *~");
-        Console.ResetColor();
+        string consolePastry = @"
+          ______         _                  _____   _                
+          | ___ \       | |             _  / __  \ | |               
+          | |_/ /_ _ ___| |_ _ __ _   _(_) `' / /' | |__  _   ___  __
+          |  __/ _` / __| __| '__| | | |     / /   | '_ \| | | \ \/ /
+          | | | (_| \__ \ |_| |  | |_| |_  ./ /___ | |_) | |_| |>  < 
+          \_|  \__,_|___/\__|_|   \__, (_) \_____/ |_.__/ \__,_/_/\_\
+                                   __/ |                             
+                                  |___/                              
+                                  (Buy 3 Get 1 Free)
+        ";
 
-        Console.WriteLine("How many loaves of bread would you like?");
+
+
+        Console.WriteLine(title);
+        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        Console.WriteLine(consoleBread);
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine(consolePastry);
+
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine("Come on bud I dont got all day. H'many breads ya want?");
         int breadQuantity = int.Parse(Console.ReadLine());
-        Console.WriteLine("How many pastries would you like?");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("K, now pastries, chop chop");
         int pastryQuantity = int.Parse(Console.ReadLine());
         Bread newBread = new Bread(breadQuantity);
         Pastry newPastry = new Pastry(pastryQuantity);
         int breadPrice = newBread.GetBreadPrice(breadQuantity);
         int pastryPrice = newPastry.GetPastryPrice(pastryQuantity);
         int totalPrice = breadPrice + pastryPrice;
-        Console.WriteLine("Your total is $" + totalPrice + ". Thank you for shopping at Pierre's Bakery!");
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("K gimme $" + totalPrice + ". And move along");
       }
       catch (Exception ex)
       {
