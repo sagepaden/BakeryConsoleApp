@@ -10,6 +10,11 @@ namespace PierresBakery.Models
     {
       PastryOrder = pastryQuantity;
     }
+
+    public Pastry()
+    {
+    }
+
     public int GetPastryPrice(int input)
     {
       int totalPrice = 0;
